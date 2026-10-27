@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SXM.EDITX — Video Editor, Thumbnail Designer &amp; Social Media Manager</title>
+  <meta name="description" content="SXM.EDITX edits reels and YouTube videos, designs click-worthy thumbnails, and runs content strategy and social media for creators and brands.">
+  <meta name="theme-color" content="#2596be">
+
+  <!-- Social share preview (add og-image.jpg to /web once assets arrive) -->
+  <meta property="og:title" content="SXM.EDITX — Content people can't scroll past">
+  <meta property="og:description" content="Reels, video edits, thumbnails, content strategy and full social media management.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.jpg">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="SXM.EDITX">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon (replace with the real logo later) -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { margin: 0; background: #ffffff; }
+    /* Branded splash shown while Flutter loads */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      display: grid; place-items: center;
+      background: #ffffff;
+      transition: opacity .4s ease;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    #loader.done { opacity: 0; pointer-events: none; }
+    #loader .mark {
+      display: flex; flex-direction: column; align-items: center; gap: 18px;
+      font-weight: 800; font-size: 22px; letter-spacing: -0.5px; color: #0d0d0d;
+    }
+    #loader .mark span { color: #2596be; }
+    #loader .bar { width: 140px; height: 3px; background: #e6e6e6; border-radius: 3px; overflow: hidden; }
+    #loader .bar::after {
+      content: ""; display: block; width: 40%; height: 100%;
+      background: #2596be; border-radius: 3px;
+      animation: slide 1.1s ease-in-out infinite;
+    }
+    @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+    @media (prefers-reduced-motion: reduce) { #loader .bar::after { animation: none; width: 100%; } }
+  </style>
+</head>
+<body>
+  <div id="loader" role="status" aria-label="Loading">
+    <div class="mark">
+      <div>SXM<span>.</span>EDITX</div>
+      <div class="bar"></div>
+    </div>
+  </div>
+
+  <!-- Fallback text for crawlers and users without JavaScript -->
+  <noscript>
+    <h1>SXM.EDITX — Video Editor, Thumbnail Designer &amp; Social Media Manager</h1>
+    <p>Reels, YouTube edits, thumbnails, content strategy and full social media management for creators and brands.</p>
+    <p>Contact: hello@sxmeditx.com</p>
+  </noscript>
+
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
